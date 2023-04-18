@@ -30,7 +30,7 @@ function App() {
     const newTurn = turn == TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
-    const newWinner = checkWinner(newBoard)
+    const newWinner = checkWinnerFrom(newBoard)
     if (newWinner){
       setWinner(newWinner)
     } else if (checkEndgame(newBoard)){
