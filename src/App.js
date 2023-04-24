@@ -1,27 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+const CambiarImagen = () => {
+  const [imagenActual, setImagenActual] = useState(
+    "https://via.placeholder.com/300x200?text=Imagen+1"
+  );
+  const [imagenNueva, setImagenNueva] = useState(
+    "https://via.placeholder.com/300x200?text=Imagen+2"
+  );
+
+  const cambiarImagen = () => {
+    setImagenActual(imagenNueva);
+    setImagenNueva(imagenActual);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>PRUEBA SUBIDA UN CAMBIO A GIT</p>
-        <button>tocame</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <img src={imagenActual} alt="Imagen actual" />
+      <button onClick={cambiarImagen}>Cambiar imagen</button>
     </div>
   );
-}
+};
 
-export default App;
+export default CambiarImagen;
